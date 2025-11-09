@@ -1,5 +1,10 @@
 # POP Restaurant
+
+### ---- Challenge -----
+
 - Spent a week to create this food ordering system. Hope that it will not have any critical vulnerability in my application.
+
+### ---- Analysis -----
 
 - After creating an account I am presented with this page. It allows me to order food via a POST request to `/order.php`
 
@@ -103,6 +108,9 @@ namespace Helpers{
 - It's a custom implementation of the **ArrayIterator** class, that after echoing the current element of the array, calls the function in the *$callback* attribute with the current value as the argument.
 - The **current()** function (https://www.geeksforgeeks.org/php/php-arrayiterator-current-function/) is called when a **foreach** clause is present, which is the case in IceCream's __invoke(), that iterates through the *$flavors* array.
 - If I set the IceCream's *\$flavors* to a **ArrayHelpers** that has a *$callback* of 'system', and is iterating through an array of commands, I have RCE on the server. 
+
+### ---- Exploitation -----
+
 - The exploit (it was a pain because of the namespaces ;( ):
 
 ```php
@@ -226,4 +234,4 @@ Content-Length: 55
 HTB{<REDACTED>}cat /pBhfMBQlu9uT_flag.txt
 ```
 
-writeup by varanda - 16/10/2025
+writeup by *varanda* - 16/10/2025

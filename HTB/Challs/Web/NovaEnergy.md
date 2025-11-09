@@ -1,6 +1,11 @@
 ﻿# NovaEnergy - HackTheSystemCTF
 
+### ---- Challenge -----
+
 - NovaEnergy is a internal web application used for file sharing system. This site can only be accessed by employee of NovaEnergy company. You're tasked to hunt for any vulnerabilities that led to any breaches in their site.
+
+### ---- Analysis -----
+
 
 ![](../../../assets/landing_NovaEnergy.png)
 - When creating an account:
@@ -155,6 +160,7 @@ redoc                   [Status: 200, Size: 910, Words: 178,
 
 ![](../../../assets/swagger_NovaEnergy.png)
 
+
 - Great! It's a **swagger** template, which allows me to see the avialable endpoints and to make requests from the UI. Here I see that there is a `/api/userDetails` endpoint. I send the request and got my **verify-token** as part of the response.
 
 ``` http
@@ -183,6 +189,9 @@ Connection: keep-alive
   "last_login": null
 }
 ```
+
+### ---- Exploitation -----
+
 
 - I'll now use the unauthenticated  `/api/email-verify` I found before and verify my account.
 ``` http
@@ -220,4 +229,4 @@ Connection: keep-alive
 ![](../../../assets/pwned_NovaENergy.png)
 
 
-writeup by varanda - 15/10/2025
+writeup by *varanda* - 15/10/2025

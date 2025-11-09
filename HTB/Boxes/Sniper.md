@@ -1,7 +1,10 @@
 # Sniper
 
-- Easy-rated Windows machine, I decided to put this here because I came up with an unintended solution.
+### ---- Challenge -----
 
+- Medium difficulty Windows machine, I decided to put this here because I came up with an unintended solution.
+
+### ---- Enumeration -----
 
 - Port Scan using **RustScan** (the GOAT):
     ``` bash
@@ -95,6 +98,9 @@
 
     ![](../../assets/RFI_Test_Sniper.png)
 
+### ---- Exploitation -----
+
+
 - I will host and include in the website a **Web Shell** so I can have **RCE**:
 	- I tried the classic `<?php system($_GET["fadfaj4321"]); ?>`, but it wasn't working, so I used WhiteWinterWolf's (https://github.com/WhiteWinterWolf/wwwolf-php-webshell)
 
@@ -110,6 +116,8 @@
 
 - I will start a **reverse shell** (base64 command from https://www.revshells.com/)
     ![](../../assets/rev_shell_Sniper.png)
+
+### ---- Privilege Escalation -----
 
 
 - There's a user named Chris, I will use the password I discovered in the db.php file (36mEAhz/B8xQ~2VM) to receive a shell as this user
