@@ -1,10 +1,10 @@
 # Sniper
 
-### ---- Challenge -----
+### ----- Challenge -----
 
 - Medium difficulty Windows machine, I decided to put this here because I came up with an unintended solution.
 
-### ---- Enumeration -----
+### ----- Enumeration -----
 
 - Port Scan using **RustScan** (the GOAT):
     ``` bash
@@ -117,7 +117,7 @@
 - I will start a **reverse shell** (base64 command from https://www.revshells.com/)
     ![](../../assets/rev_shell_Sniper.png)
 
-### ---- Privilege Escalation -----
+### ----- Privilege Escalation -----
 
 
 - There's a user named Chris, I will use the password I discovered in the db.php file (36mEAhz/B8xQ~2VM) to receive a shell as this user
