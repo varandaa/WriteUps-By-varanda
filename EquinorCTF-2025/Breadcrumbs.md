@@ -1,8 +1,8 @@
 # Breadcrumbs - EquinorCTF 2025
 
-### ---- Challenge -----
+### ===== Challenge =====
 - Follow the breadcrumbs to find the flag!
-### ---- Analysis -----
+### ===== Analysis =====
 - We are presented with a page that has a keyboard. I instinctively start typing the flag format.
 ![](../assets/Breadcrumbs_keyboard.png)
 
@@ -20,7 +20,7 @@
 
 - All I have to do is write a script to brute force the possible characters and if a session cookie containing the next fidx is returned by the server, it means we discovered the right character. When I discover a character, the next requests are sent with the new session, and so on.
 
-### ---- Exploitation -----
+### ===== Exploitation =====
 
 - After all this is a competition with limited time, so I decided to use my friend Copilot to help me write this script:
 

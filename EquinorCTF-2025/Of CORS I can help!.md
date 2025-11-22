@@ -1,8 +1,8 @@
 # Of CORS I can help! - EquinorCTF 2025 
 
-### ---- Challenge -----
+### ===== Challenge =====
 - Jenny is the corporate concierge who fetches intranet pages so employees don’t have to click around. She’ll happily visit whatever link the portal hands her while staying logged in as staff. Take her for a spin and see if that generosity extends to the flag.
-### ---- Analysis -----
+### ===== Analysis =====
 - In this challenge, we see a website that allows us to introduce a URL for the company's internal chatbot to summarize. However, the page must belong to the company.
 
 ![](../assets/OF_CORS_restriction.png)
@@ -31,7 +31,7 @@ async def get_flag(request: Request) -> JSONResponse:
 
 - It works! We can get the bot to visit a non-company website!
 
-### ---- Exploitation -----
+### ===== Exploitation =====
 
 - Now we need to host the malicious script that will get the bot to visit /flag while keeping his cookies:
 

@@ -1,10 +1,10 @@
 ﻿# NovaEnergy - HackTheSystemCTF
 
-### ----- Challenge -----
+### ===== Challenge =====
 
 - NovaEnergy is a internal web application used for file sharing system. This site can only be accessed by employee of NovaEnergy company. You're tasked to hunt for any vulnerabilities that led to any breaches in their site.
 
-### ----- Analysis -----
+### ===== Analysis =====
 
 
 ![](../../../assets/landing_NovaEnergy.png)
@@ -190,7 +190,7 @@ Connection: keep-alive
 }
 ```
 
-### ----- Exploitation -----
+### ===== Exploitation =====
 
 
 - I'll now use the unauthenticated  `/api/email-verify` I found before and verify my account.

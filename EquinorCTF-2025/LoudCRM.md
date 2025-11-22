@@ -1,9 +1,9 @@
 # Loud CRM - EquinorCTF 2025 
 
-### ---- Challenge ----
+### ===== Challenge =====
 - Our new CRM platform SHOUTS EVERYTHING because the developer thought it would "improve readability." Now every time I log in, it feels like someone is SCREAMING IN MY HEAD. Alice from accounting has the flag. Maybe you can make the system stop yelling long enough to get in?
 
-### ---- Analysis ----
+### ===== Analysis =====
 - By the challenge description, we know we are supposed to gain access to Alice's account
 
 - First I start by registering a user, and notice that in the payload sent in the POST to `/register` **my username was automatically capitalized**:
@@ -42,7 +42,7 @@ def register():
 
 - I see the issue right away! When I create a user, in order to see if that username already exists, the server checks if the **provided username is equal to it's capitalized version**. If I **provide a lower case username**, the username will be considered unique. We can use this to create an account as if with the username Alice, and get our flag!
 
-### ---- Exploitation ----
+### ===== Exploitation =====
 
 - I change the username to lowercase in Burp:
 

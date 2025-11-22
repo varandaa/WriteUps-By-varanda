@@ -1,10 +1,10 @@
 # Shop 7 - EquinorCTF 2025
 
-### ---- Challenge -----
+### ===== Challenge =====
 
 - What is an arcade without a retro merch store? We ditched all those fancy new JavaScript frameworks from last year and simply went back to our roots like the good old days! Our shop this year boasts a unique, one of a kind pair of EPT socks that you can claim physically at the admin booth after you have bought the socks in the shop and submitted the flag on the platform!
 
-### ---- Analysis -----
+### ===== Analysis =====
 
 - We are presented with a shopping page in which you can buy a Dummy Flag and a pair of EPT socks:
 
@@ -69,7 +69,7 @@ Te: trailers
 
 - I googled the double underscore prefix and learned about **Python Name Mangling**. Basically, it's functionality that makes it harder to unintentionally access the attributes of a parent class.
 
-### ---- Exploitation -----
+### ===== Exploitation =====
 
 - The exploit:
 	- In this case __cash is mangled into **_Customer__cash**.

@@ -1,9 +1,9 @@
 # Breathtaking View
 
-### ----- Challenge -----
+### ===== Challenge =====
 - Check out my new website showcasing a breathtaking view—let's hope no one can 'manipulate' it!
 
-### ----- Analysis -----
+### ===== Analysis =====
 - We have to register a user, and after doing so and loggin in, we are presented with this page:
 
 ![](../../../assets/Breathtaking_view_site.png)
@@ -67,7 +67,7 @@ public class IndexController {
 
 - It works locally when the `.contains("java")` restriction is removed! Now I need to figure out a way to bypass this.
 
-### ----- Exploitation -----
+### ===== Exploitation =====
 - I had a vague idea in my mind that in Java classes could be instantiated by their name, by passing it as a string into a specific function. (I learned this in college).
 - I didn't exactly know how to do this, but if I was able to, I could just pass `"ja" + "va" + ".lang.Runtime"` into that function and bypass the restriction.
 - So I ask my friend ChatGPT, and after some tweaking we cook this payload:
