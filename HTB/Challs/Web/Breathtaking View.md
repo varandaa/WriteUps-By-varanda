@@ -53,7 +53,7 @@ public class IndexController {
 - I start looking for exploits online and find this:
     - https://0xn3va.gitbook.io/cheat-sheets/framework/spring/view-manipulation
 
-- I commented the 'java' restriction out on my local version of the challenge and tried the payload presented in this article. I URL encoded it and appended a null terminator (`%00`) to bypass the `lang + "/index"` issue:
+- I commented out the `.contains("java")` restriction on my local version of the challenge and tried the payload presented in this article. I URL encoded it and appended a null terminator (`%00`) to bypass the `lang + "/index"` issue:
 
 ![](../../../assets/Breathtaking_view_first_payload.png)
 ![](../../../assets/Breathtaking_view_first_payload_result.png)
@@ -68,9 +68,9 @@ public class IndexController {
 - It works locally when the `.contains("java")` restriction is removed! Now I need to figure out a way to bypass this.
 
 ### ===== Exploitation =====
-- I had a vague idea in my mind that in Java classes could be instantiated by their name, by passing it as a string into a specific function. (I learned this in college).
-- I didn't exactly know how to do this, but if I was able to, I could just pass `"ja" + "va" + ".lang.Runtime"` into that function and bypass the restriction.
-- So I ask my friend ChatGPT, and after some tweaking we cook this payload:
+- I had a vague idea in my mind that in Java, classes could be instantiated by their name by passing it as a string into a specific function. (I learned this in college).
+- I didn't exactly know how to do this, but if I was able to, I could just pass a string like `"ja" + "va.lang.Runtime"` into that function and bypass the restriction.
+- So I decide to ask my friend ChatGPT, and after some tweaking we cook this payload:
 
 ``` java
 __${T(Class).forName('ja'+'va.util.Scanner').getConstructor(T(Class).forName('ja'+'va.io.InputStream')).newInstance(T(Class).forName('ja'+'va.lang.Runtime').getMethod('getRuntime').invoke(null).exec('ls /').getInputStream()).useDelimiter("\\A").next()}__::.x
