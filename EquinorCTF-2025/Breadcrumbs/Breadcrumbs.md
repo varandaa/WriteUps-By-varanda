@@ -3,8 +3,8 @@
 ### ===== Challenge =====
 - Follow the breadcrumbs to find the flag!
 ### ===== Analysis =====
-- We are presented with a page that has a keyboard. I instinctively start typing the flag format.
-![](../assets/Breadcrumbs_keyboard.png)
+- We are presented with a page that has a keyboard. I instinctively start typindg the flag format.
+![](./Breadcrumbs_keyboard.png)
 
 - However, when I press a key that isn't correct, the letters dissapear and I have to start again. The web app **GET's /E when I press 'E'** to /P when I press 'P', etc.
 
@@ -14,7 +14,7 @@
 
 - This looks like a **JWT**, so i put it into a decoder:
 
-![](../assets/Breadcrumbs_JWT.png)
+![](./Breadcrumbs_JWT.png)
 
 - It's a JWT with a weird payload. But the **fidx header** contains the number 4! At this point I had guessed 4 characters (`EPT{`), so this is definitely how the server keeps track!
 
@@ -134,7 +134,7 @@ if __name__ == "__main__":
 
 - I left the script running and left the room to go eat some dinner:
 
-![](../assets/Breadcrumbs_lazagna.png)
+![](./Breadcrumbs_lazagna.png)
 
 - When I got back, **BOOM!** Nothing better than a full belly and a flag!
 

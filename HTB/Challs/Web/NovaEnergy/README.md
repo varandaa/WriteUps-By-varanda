@@ -7,7 +7,7 @@
 ### ===== Analysis =====
 
 
-![](../../../assets/landing_NovaEnergy.png)
+![](./landing_NovaEnergy.png)
 - When creating an account:
     - Your email must be of the 'gonuclear.com' domain.
 	- You must verify your account via an e-mail.
@@ -158,7 +158,7 @@ redoc                   [Status: 200, Size: 910, Words: 178,
 [...] 
 ```
 
-![](../../../assets/swagger_NovaEnergy.png)
+![](./swagger_NovaEnergy.png)
 
 
 - Great! It's a **swagger** template, which allows me to see the avialable endpoints and to make requests from the UI. Here I see that there is a `/api/userDetails` endpoint. I send the request and got my **verify-token** as part of the response.
@@ -226,7 +226,7 @@ Connection: keep-alive
 
 - After doing this, I am able to login with the user I created and in the user dashboard we see the **flag.txt** file ready to be downloaded.
 
-![](../../../assets/pwned_NovaENergy.png)
+![](./pwned_NovaENergy.png)
 
 
 writeup by *varanda* - 15/10/2025

@@ -6,11 +6,11 @@
 ### ===== Analysis =====
 - We have to register a user, and after doing so and loggin in, we are presented with this page:
 
-![](../../../assets/Breathtaking_view_site.png)
+![](./Breathtaking_view_site.png)
 
 - It's only functionality is to change the `lang` parameter of the page, so I enter a random value in this parameter and this happens:
 
-![](../../../assets/Breathtaking_view_random_arg.png)
+![](./Breathtaking_view_random_arg.png)
 
 - What I entered is reflected back to me, and it mentions templates, so I'm thinking immediately of a **Server-Side Template Injection (SSTI)**
 
@@ -43,7 +43,7 @@ public class IndexController {
 }
 ```
 
-![](../../../assets/Breathtaking_view_thymeleaf.png)
+![](./Breathtaking_view_thymeleaf.png)
 
 
 - We see that the server is using **thymeleaf** as the template engine and that there are several restrictions that need to be bypassed:
@@ -55,15 +55,15 @@ public class IndexController {
 
 - I commented out the `.contains("java")` restriction on my local version of the challenge and tried the payload presented in this article. I URL encoded it and appended a null terminator (`%00`) to bypass the `lang + "/index"` issue:
 
-![](../../../assets/Breathtaking_view_first_payload.png)
-![](../../../assets/Breathtaking_view_first_payload_result.png)
+![](./Breathtaking_view_first_payload.png)
+![](./Breathtaking_view_first_payload_result.png)
 
 - It worked! However, to find out the name of the flag file I need to be able to see the full output of `ls`. 
     - `__${new java.util.Scanner(T(java.lang.Runtime).getRuntime().exec("ls /").getInputStream()).useDelimiter("\\A").next()}__::.x`. I added `.useDelimiter("\\A")` to the payload. 
     - `\\A` means end-of-input, so by using it as a delimiter the whole output is treated as a single word and `next()` shows me the full output at once.
  - Let's try it out:
 
- ![](../../../assets/Breathtaking_view_non-java.png)
+ ![](./Breathtaking_view_non-java.png)
 
 - It works locally when the `.contains("java")` restriction is removed! Now I need to figure out a way to bypass this.
 
@@ -79,7 +79,7 @@ __${T(Class).forName('ja'+'va.util.Scanner').getConstructor(T(Class).forName('ja
 - I run it and it works!
 - Then I just need to change the command to cat the flag:
  
-![](../../../assets/Breathtaking_view_flag.png)
+![](./Breathtaking_view_flag.png)
 
 - **Flag: HTB{whAt_4_v1ewWwww!}**
 

@@ -8,7 +8,7 @@
 
 - We are presented with a shopping page in which you can buy a Dummy Flag and a pair of EPT socks:
 
-![](../assets/Shop-7_page.png)
+![](./Shop-7_page.png)
 
 
 - As soon as I saw that you can get them in real life I was **LOCKED IN**
@@ -61,7 +61,7 @@ Te: trailers
     "__cash": 2000
 }
 ```
-![](../assets/Shop-7_fail.png) 
+![](./Shop-7_fail.png) 
 
 - It didn't work ;(
 
@@ -85,8 +85,8 @@ Te: trailers
 ```
 - Our user is created and we have enough cash to buy the socks! 
 
-![](../assets/Shop-7_flag.png) 
-![](../assets/Shop-7_socks.jpeg) 
+![](./Shop-7_flag.png) 
+![](./Shop-7_socks.jpeg) 
 
 - **Flag: EPT{I_gu3s5_n07_s0_pr1v4t3_4f7er_41}**
 

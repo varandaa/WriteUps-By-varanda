@@ -8,45 +8,45 @@
 
 - I am presented with this page:
 
-![](../../../assets/Speednet-login.png)
+![](./Speednet-login.png)
 
 - After registering an account with the provided e-mail, I see there's 2FA in this app, it might be useful later.
 
-![](../../../assets/Speednet-user.png)
+![](./Speednet-user.png)
 
 - Checking the HTTP History, I notice that a `/graphql` endpoint is being used for most of the app's functionality.
 
 - Obviously, I have to check if **introspection queries** work. I do that using the InQL Burp Suite extension and have success:
 
-![](../../../assets/Speednet-introspection.png)
+![](./Speednet-introspection.png)
 
 - The one that immediately catches my eye is the `devForgotPassword` mutation, but I need to know the admin's email in order to try changing his password.
 
 - To discover it, I try an **IDOR** on the `userProfile` endpoint. My user's ID is 2, so I try to query the info of the user with ID 1:
 
-![](../../../assets/Speednet-idor.png)
+![](./Speednet-idor.png)
 
 - Having found the admin's email, I'm able to change his password:
 
-![](../../../assets/Speednet-reset.png)
+![](./Speednet-reset.png)
 
-![](../../../assets/Speednet-password.png)
+![](./Speednet-password.png)
 
 - I try to login with the credentials `admin@speednet.htb:pass`, but he has 2FA configured
 
 - I activate 2FA on my account, log out, and log back in to see the format of the OTP i receive in `/emails`:
 
-![](../../../assets/Speednet-code.png)
+![](./Speednet-code.png)
 - It's a 4 digit PIN, meaning I can probably brute-force it.
 - **Login flow**:
     - The `login()` query gives this response:
       
       
-        ![](../../../assets/Speednet-login-api.png)
+        ![](./Speednet-login-api.png)
     
     - That **2FA_REQUIRED token is binded to the OTP code** sent by email. If I enter the wrong OTP code, the token doesn't become invalid. It only becomes invalid if I enter the right OTP code or if expires (5 mins):
 
-        ![](../../../assets/Speednet-otp-try.png)
+        ![](./Speednet-otp-try.png)
     
     - If the OTP code is correct, the server responds with the user token that is then stored in `localStorage`.
 
@@ -59,12 +59,12 @@
 
 - Seems like a great plan... Until I get hit with this:
 
-![](../../../assets/Speednet-rate-limit.png)
+![](./Speednet-rate-limit.png)
 
 - But I still have a trick up my sleeve! **Query batching**!
 - Basically, if it's activated, it allows me to make more than one query in a single request. This can drastically reduce the number of requests made and hopefully help us bypass this rate limit. Let's see if it works:
 
-![](../../../assets/Speednet-batch.png)
+![](./Speednet-batch.png)
 
 - It does! I tried to do only one request that queried with all the possible OTP codes, but it gave an error saying 'Payload Too Large'. 
 
@@ -130,11 +130,11 @@ for i in range(0, len(pins), batch_size):
 
 - The output isn't pretty, but after a bit I get this:
 
-![](../../../assets/Speednet-token.png)
+![](./Speednet-token.png)
 
 - I put it in my browser's localStorage and become logged in as the admin. Then I go to the 'Billing' section and get the flag:
 
-![](../../../assets/Speednet-flag.png)
+![](./Speednet-flag.png)
 
 - **Flag: HTB{gr4phql_3xpl01t_1n_a_nutsh3ll}**
 

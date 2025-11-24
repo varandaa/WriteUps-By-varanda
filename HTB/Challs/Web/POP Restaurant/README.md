@@ -8,7 +8,7 @@
 
 - After creating an account I am presented with this page. It allows me to order food via a POST request to `/order.php`
 
-![](../../../assets/landing_POPRestaurant.png)
+![](./landing_POPRestaurant.png)
 
 
 

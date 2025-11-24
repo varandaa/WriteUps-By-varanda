@@ -8,7 +8,7 @@
 
 - First I start by registering a user, and notice that in the payload sent in the POST to `/register` **my username was automatically capitalized**:
 
-![](../assets/LOUD_CRM_register.png)
+![](./LOUD_CRM_register.png)
 
 ``` 
 username=VARANDA&display_name=varanda&password=pass
@@ -71,7 +71,7 @@ username=alice&display_name=pwned&password=pass
 - Our user is successfully created!
 - Then we just need to login with alice:pass and we get the flag!
 
-![](../assets/LOUD_CRM_flag.png)
+![](./LOUD_CRM_flag.png)
 
 - **Flag: EPT{LOUD_HANDLE_OVERRIDE}**
 

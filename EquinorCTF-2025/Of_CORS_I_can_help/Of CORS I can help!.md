@@ -5,7 +5,7 @@
 ### ===== Analysis =====
 - In this challenge, we see a website that allows us to introduce a URL for the company's internal chatbot to summarize. However, the page must belong to the company.
 
-![](../assets/OF_CORS_restriction.png)
+![](./OF_CORS_restriction.png)
 
 - Looking at the source code, I immediately notice 2 interesting endpoints:
 
@@ -27,7 +27,7 @@ async def get_flag(request: Request) -> JSONResponse:
 
 - We can bypass the company URL restriction by using the **/goto** endpoint and passing **our exploit in the url parameter**. Let's test it out:
 
-![](../assets/OF_CORS_bypass.png)
+![](./OF_CORS_bypass.png)
 
 - It works! We can get the bot to visit a non-company website!
 
@@ -53,9 +53,9 @@ mode: 'cors'
 
 - Let's try it:
 
-![](../assets/OF_CORS_exploit.png)
+![](./OF_CORS_exploit.png)
 
-![](../assets/OF_CORS_flag.png)
+![](./OF_CORS_flag.png)
 
 - **Flag: EPT{CORS_t0tally_trU5t5_y0u}**
 
