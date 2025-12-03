@@ -4,7 +4,7 @@
 - Check out my new website showcasing a breathtaking view—let's hope no one can 'manipulate' it!
 
 ### ===== Analysis =====
-- We have to register a user, and after doing so and loggin in, we are presented with this page:
+- We have to register a user, and after doing so and logging in, we are presented with this page:
 
 ![](./Breathtaking_view_site.png)
 

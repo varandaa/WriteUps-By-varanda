@@ -161,7 +161,7 @@ redoc                   [Status: 200, Size: 910, Words: 178,
 ![](./swagger_NovaEnergy.png)
 
 
-- Great! It's a **swagger** template, which allows me to see the avialable endpoints and to make requests from the UI. Here I see that there is a `/api/userDetails` endpoint. I send the request and got my **verify-token** as part of the response.
+- Great! It's a **swagger** template, which allows me to see the available endpoints and to make requests from the UI. Here I see that there is a `/api/userDetails` endpoint. I send the request and got my **verify-token** as part of the response.
 
 ``` http
 POST /api/userDetails HTTP/1.1
